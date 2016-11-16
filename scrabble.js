@@ -32,7 +32,7 @@ var Scrabble = function() {
 };
 
 Scrabble.prototype.score = function(word) {
-  var wordLetters = word.split("");
+  var wordLetters = word.toLowerCase().split("");
   var lettersLength = word.length;
   var valueOfLetters = this.letterValues;
   var total = 0;
@@ -44,8 +44,19 @@ Scrabble.prototype.score = function(word) {
   return total;
 };
 
+// Scrabble.prototype.
+
+
+
+
+
+
+
+
+
+
 var newScrabble = new Scrabble();
-  var testWord = newScrabble.score("allison");
+  var testWord = newScrabble.score("ALLISON");
   console.log(testWord);
 
 
