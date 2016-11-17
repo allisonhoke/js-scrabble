@@ -128,7 +128,10 @@ Player.prototype.hasWon = function() {
   }
 };
 
-
+Player.prototype.highestScoringWord = function() {
+  topWord = newScrabble.highestScoreFrom(this._plays);
+  return topWord;
+};
 
 console.log("==============TESTS===========");
 
@@ -150,7 +153,6 @@ console.log(newPlayer._plays);
 console.log("======testing .play");
 newPlayer.play("slime");
 console.log(newPlayer._plays);
-
 newPlayer.play("grime");
 console.log(newPlayer._plays);
 
@@ -162,7 +164,9 @@ console.log(newPlayer.hasWon());
 newPlayer.play("zzzzzzz");
 console.log(newPlayer._plays);
 console.log(newPlayer.totalScore());
-console.log("-----===-=-=-=-=-=-=-")
+
+console.log("======testing .highestScoringWord");
+console.log(newPlayer.highestScoringWord());
 
 Scrabble.prototype.helloWorld = function() {
   return 'hello world!';
