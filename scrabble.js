@@ -133,6 +133,12 @@ Player.prototype.highestScoringWord = function() {
   return topWord;
 };
 
+Player.prototype.highestWordScore = function() {
+  topWord = this.highestScoringWord();
+  topWordScore = newScrabble.score(topWord);
+  return topWordScore;
+};
+
 console.log("==============TESTS===========");
 
 console.log("======testing score");
@@ -167,6 +173,9 @@ console.log(newPlayer.totalScore());
 
 console.log("======testing .highestScoringWord");
 console.log(newPlayer.highestScoringWord());
+
+console.log("======testing .highestWordScore");
+console.log(newPlayer.highestWordScore());
 
 Scrabble.prototype.helloWorld = function() {
   return 'hello world!';
