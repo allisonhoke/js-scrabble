@@ -121,14 +121,14 @@ Player.prototype.totalScore = function() {
 };
 
 Player.prototype.hasWon = function() {
+  if (this.totalScore() < 100) {
     return false;
+  } else {
+    return true;
+  }
 };
 
-// if (this.totalScore < 100) {
-//   return false;
-// } else {
-//   return true;
-// }
+
 
 console.log("==============TESTS===========");
 
@@ -157,12 +157,12 @@ console.log(newPlayer._plays);
 console.log("======testing .totalScore");
 console.log(newPlayer.totalScore());
 
-// console.log("======testing .haswon");
-// console.log(newPlayer.hasWon());
-// newPlayer.play("zzzzzzz");
-// console.log(newPlayer._plays);
-// console.log(newPlayer.totalScore());
-// console.log("-----===-=-=-=-=-=-=-")
+console.log("======testing .haswon");
+console.log(newPlayer.hasWon());
+newPlayer.play("zzzzzzz");
+console.log(newPlayer._plays);
+console.log(newPlayer.totalScore());
+console.log("-----===-=-=-=-=-=-=-")
 
 Scrabble.prototype.helloWorld = function() {
   return 'hello world!';
