@@ -78,11 +78,7 @@ Scrabble.prototype.highestScoreFrom = function(arrayOfWords) {
   } else {
     return "Something has gone horribly wrong.";
   }
-
 };
-
-
-
 
 var tieBreaker = function(arrayOfWords) {
   var lengthOfWord = 7;
@@ -99,21 +95,74 @@ var tieBreaker = function(arrayOfWords) {
   return smallWord;
 };
 
+var Player = function(name) {
+  this._name = name;
+  this._plays = [];
+  this._game = new Scrabble(); //this assignment will need to have a different value when we consider more than one player in a game - maybe a way to find a particular `instance` of Scrabble?
+};
 
+Player.prototype.play = function(word) {
+  if (this.hasWon() === false) {
+    this._plays.push(word);
+  } else {
+    return false;
+  }
+};
 
+Player.prototype.totalScore = function() {
+  var scoreOfAll = 0;
+  var playsArrayLength = this._plays.length;
 
-console.log("testing score")
+  for(var i = 0; i < playsArrayLength; i++) {
+    var thisWordScore = this._game.score(this._plays[i]);
+    scoreOfAll += thisWordScore;
+  }
+  return scoreOfAll;
+};
+
+Player.prototype.hasWon = function() {
+    return false;
+};
+
+// if (this.totalScore < 100) {
+//   return false;
+// } else {
+//   return true;
+// }
+
+console.log("==============TESTS===========");
+
+console.log("======testing score");
 var newScrabble = new Scrabble();
   var testWord = newScrabble.score("ALLISON");
   console.log(testWord);
 
-console.log("testing highestScoreFrom")
+console.log("======testing highestScoreFrom");
   var newScrabble = new Scrabble();
     var testArray = newScrabble.highestScoreFrom(["ALLISON", "yellow", "sand", "zzzzzz"]);
     console.log(testArray);
 
+console.log("======testing player");
+var newPlayer = new Player("Allison");
+console.log(newPlayer._name);
+console.log(newPlayer._plays);
 
+console.log("======testing .play");
+newPlayer.play("slime");
+console.log(newPlayer._plays);
 
+newPlayer.play("grime");
+console.log(newPlayer._plays);
+
+console.log("======testing .totalScore");
+console.log(newPlayer.totalScore());
+
+// console.log("======testing .haswon");
+// console.log(newPlayer.hasWon());
+// newPlayer.play("zzzzzzz");
+// console.log(newPlayer._plays);
+// console.log(newPlayer.totalScore());
+// console.log("-----===-=-=-=-=-=-=-")
 
 Scrabble.prototype.helloWorld = function() {
   return 'hello world!';
