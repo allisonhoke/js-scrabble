@@ -139,46 +139,46 @@ Player.prototype.highestWordScore = function() {
   return topWordScore;
 };
 
-console.log("==============TESTS===========");
-
-console.log("======testing score");
-var newScrabble = new Scrabble();
-  var testWord = newScrabble.score("ALLISON");
-  console.log(testWord);
-
-console.log("======testing highestScoreFrom");
-  var newScrabble = new Scrabble();
-    var testArray = newScrabble.highestScoreFrom(["ALLISON", "yellow", "sand", "zzzzzz"]);
-    console.log(testArray);
-
-console.log("======testing player");
-var newPlayer = new Player("Allison");
-console.log(newPlayer._name);
-console.log(newPlayer._plays);
-
-console.log("======testing .play");
-newPlayer.play("slime");
-console.log(newPlayer._plays);
-newPlayer.play("grime");
-console.log(newPlayer._plays);
-
-console.log("======testing .totalScore");
-console.log(newPlayer.totalScore());
-
-console.log("======testing .haswon");
-console.log(newPlayer.hasWon());
-newPlayer.play("zzzzzzz");
-console.log(newPlayer._plays);
-console.log(newPlayer.totalScore());
-
-console.log("======testing .highestScoringWord");
-console.log(newPlayer.highestScoringWord());
-
-console.log("======testing .highestWordScore");
-console.log(newPlayer.highestWordScore());
-
-Scrabble.prototype.helloWorld = function() {
-  return 'hello world!';
-};
+// console.log("==============TESTS===========");
+//
+// console.log("======testing score");
+// var newScrabble = new Scrabble();
+//   var testWord = newScrabble.score("ALLISON");
+//   console.log(testWord);
+//
+// console.log("======testing highestScoreFrom");
+//   var newScrabble = new Scrabble();
+//     var testArray = newScrabble.highestScoreFrom(["ALLISON", "yellow", "sand", "zzzzzz"]);
+//     console.log(testArray);
+//
+// console.log("======testing player");
+// var newPlayer = new Player("Allison");
+// console.log(newPlayer._name);
+// console.log(newPlayer._plays);
+//
+// console.log("======testing .play");
+// newPlayer.play("slime");
+// console.log(newPlayer._plays);
+// newPlayer.play("grime");
+// console.log(newPlayer._plays);
+//
+// console.log("======testing .totalScore");
+// console.log(newPlayer.totalScore());
+//
+// console.log("======testing .haswon");
+// console.log(newPlayer.hasWon());
+// newPlayer.play("zzzzzzz");
+// console.log(newPlayer._plays);
+// console.log(newPlayer.totalScore());
+//
+// console.log("======testing .highestScoringWord");
+// console.log(newPlayer.highestScoringWord());
+//
+// console.log("======testing .highestWordScore");
+// console.log(newPlayer.highestWordScore());
+//
+// Scrabble.prototype.helloWorld = function() {
+//   return 'hello world!';
+// };
 
 module.exports = Scrabble;
